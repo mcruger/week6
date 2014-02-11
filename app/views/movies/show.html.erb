@@ -1,0 +1,22 @@
+<div class="page-header">
+  <%= link_to "Edit This Movie", "/movies/edit/#{movie.id}", class: 'pull-right btn btn-large btn-info' %>
+  <%= link_to "Delete This Movie", "/movies/delete/#{movie.id}", class: 'pull-right btn btn-large btn-danger' %>
+  <h1><%= @movie.title %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag @movie.image_url %>
+  </div>
+  <div class="col-md-9">
+    <p class="lead">
+      <strong>Title:</strong>
+      <%= @movie.title %>
+    </p>
+    <p class="lead"><strong>Year: </strong><%= @movie.year %></p>
+    <p class="lead"><strong>Plot: </strong><%= @movie.plot %></p>
+    <p class="lead"><strong>Director: </strong><em>Director goes here</em></p>
+    <p class="lead"><strong>Cast: </strong><em>Cast goes here</em></p>
+  </div>
+</div>
+

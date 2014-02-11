@@ -1,0 +1,45 @@
+<div class="page-header">
+
+  <%= link_to "Add a New Movie", "/movies/new",
+              :class => "pull-right btn btn-success btn-large" %>
+
+  <h1>Movies</h1>
+</div>
+
+<% @movies.each do |movie| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag movie.image_url, :class => "col-md-10" %>
+    </div>
+    <div class="col-md-9">
+      <h2>
+        <%= link_to movie.title, "/movies/#{movie.id}" %>
+        (<%= movie.year %>)
+      </h2>
+      <p class="lead"><%= movie.plot %></p>
+      <p>Directed by Ron Howard</p>
+      <p>Starring Tom Hanks, Kevin Bacon</p>
+      <p>
+        <%= link_to "Edit This Movie", "/movies/edit/#{movie.id}" %> |
+        <%= link_to "Delete This Movie", "/movies/delete/#{movie.id}" %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
